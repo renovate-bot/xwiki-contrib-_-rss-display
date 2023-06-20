@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.rendering.internal.macro.rss;
+package org.xwiki.contrib.rssdisplay.internal;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -45,7 +45,7 @@ import org.xwiki.rendering.block.XDOM;
 import org.xwiki.rendering.listener.reference.ResourceType;
 import org.xwiki.rendering.macro.MacroContentParser;
 import org.xwiki.rendering.macro.MacroExecutionException;
-import org.xwiki.rendering.macro.rss.RssMacroParameters;
+import org.xwiki.contrib.rssdisplay.RssMacroParameters;
 import org.xwiki.rendering.parser.Parser;
 import org.xwiki.rendering.syntax.Syntax;
 import org.xwiki.rendering.transformation.MacroTransformationContext;
@@ -76,7 +76,7 @@ import static org.mockito.Mockito.when;
 @ComponentList({
     DefaultBeanManager.class
 })
-public class RssMacroTest
+class RssMacroTest
 {
     @InjectMockComponents
     private RssMacro macro;
@@ -104,7 +104,7 @@ public class RssMacroTest
     private RomeFeedFactory romeFeedFactory;
 
     @BeforeEach
-    public void setup()
+    void setup()
     {
         when(execution.getContext()).thenReturn(context);
     }
@@ -114,7 +114,7 @@ public class RssMacroTest
      * in cases where the required 'feed' parameter is missing.
      */
     @Test
-    public void testRequiredParameterMissing() throws Exception
+    void testRequiredParameterMissing()
     {
         Throwable exception = assertThrows(MacroExecutionException.class, () -> {
             this.macro.execute(new RssMacroParameters(), null, null);
@@ -126,7 +126,7 @@ public class RssMacroTest
      * Tests the macro's behavior when the server hosting the feeds doesn't respond.
      */
     @Test
-    public void testInvalidDocument() throws Exception
+    void testInvalidDocument() throws Exception
     {
         final RssMacroParameters parameters = new RssMacroParameters();
         MacroExecutionException expectedException = new MacroExecutionException("Error");
@@ -143,7 +143,7 @@ public class RssMacroTest
     }
 
     @Test
-    public void execute() throws Exception
+    void execute() throws Exception
     {
         RssMacroParameters rssMacroParameters = new RssMacroParameters();
         rssMacroParameters.setContent(true);

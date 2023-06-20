@@ -17,19 +17,20 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.rendering.macro.rss;
+package org.xwiki.contrib.rssdisplay;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.commons.lang3.StringUtils;
+import org.xwiki.contrib.rssdisplay.internal.RssMacro;
 import org.xwiki.properties.annotation.PropertyDescription;
 import org.xwiki.properties.annotation.PropertyMandatory;
 import org.xwiki.rendering.macro.box.BoxMacroParameters;
 import org.xwiki.rendering.macro.parameter.MacroParameterException;
 
 /**
- * Parameters for the {@link org.xwiki.rendering.internal.macro.rss.RssMacro} Macro.
+ * Parameters for the {@link RssMacro} Macro.
  * 
  * @version $Id$
  * @since 1.8RC1
@@ -121,6 +122,7 @@ public class RssMacroParameters extends BoxMacroParameters
      * @param width the width of the RSS box, that will dismiss potential CSS rules defining its default value.
      */
     @PropertyDescription("The width, in px or %, of the box containing the RSS output (default is 30%)")
+    @Override
     public void setWidth(String width)
     {
         this.width = width;
@@ -129,6 +131,7 @@ public class RssMacroParameters extends BoxMacroParameters
     /**
      * @return the width of the RSS box, that will dismiss potential CSS rules defining its default value.
      */
+    @Override
     public String getWidth()
     {
         return this.width;

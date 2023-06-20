@@ -23,18 +23,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.xwiki.platform</groupId>
-    <artifactId>xwiki-platform-rendering-macros</artifactId>
-    <version>15.6-SNAPSHOT</version>
+    <groupId>org.xwiki.contrib</groupId>
+    <artifactId>parent-platform</artifactId>
+    <version>14.10</version>
   </parent>
-  <artifactId>xwiki-platform-rendering-macro-rss</artifactId>
-  <name>XWiki Platform - Rendering - Macro - RSS</name>
+  <groupId>org.xwiki.contrib</groupId>
+  <artifactId>rss-display</artifactId>
+  <version>15.5-SNAPSHOT</version>
+  <name>RSS Display</name>
   <description>Displays the contents of a RSS feed</description>
   <properties>
-    <xwiki.jacoco.instructionRatio>0.8</xwiki.jacoco.instructionRatio>
+    <xwiki.issueManagement.jira.id>RSSDISPLAY</xwiki.issueManagement.jira.id>
+    <xwiki.release.jira.skip>false</xwiki.release.jira.skip>
+    <xwiki.jacoco.instructionRatio>0.83</xwiki.jacoco.instructionRatio>
     <!-- Name to display by the Extension Manager -->
     <xwiki.extension.name>RSS Macro</xwiki.extension.name>
+    <!-- Category to display by the Extension Manager -->
+    <xwiki.extension.category>macro</xwiki.extension.category>
+    <!-- Old names of this module used for retro compatibility when resolving dependencies of old extensions -->
+    <xwiki.extension.features>org.xwiki.platform:xwiki-platform-rendering-macro-rss</xwiki.extension.features>
   </properties>
+  <scm>
+    <connection>scm:git:git://github.com/xwiki-contrib/rss-display.git</connection>
+    <developerConnection>scm:git:git@github.com:xwiki-contrib/rss-display.git</developerConnection>
+    <url>https://github.com/xwiki-contrib/rss-display/tree/master</url>
+    <tag>HEAD</tag>
+  </scm>
+  <developers>
+    <developer>
+      <id>vmassol</id>
+      <name>Vincent Massol</name>
+    </developer>
+    <developer>
+      <id>xwikidev</id>
+      <name>XWiki Development Team</name>
+    </developer>
+  </developers>
   <dependencies>
     <dependency>
       <groupId>rome</groupId>
@@ -58,7 +82,7 @@
     <dependency>
       <groupId>org.xwiki.platform</groupId>
       <artifactId>xwiki-platform-bridge</artifactId>
-      <version>${project.version}</version>
+      <version>${platform.version}</version>
     </dependency>
     <!-- For the HTMLCleaner component list. -->
     <dependency>
@@ -66,6 +90,31 @@
       <artifactId>xwiki-commons-xml</artifactId>
       <version>${commons.version}</version>
       <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <!-- Test dependencies -->
+    <dependency>
+      <groupId>org.xwiki.rendering</groupId>
+      <artifactId>xwiki-rendering-test</artifactId>
+      <version>${rendering.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.rendering</groupId>
+      <artifactId>xwiki-rendering-syntax-xwiki21</artifactId>
+      <version>${rendering.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.rendering</groupId>
+      <artifactId>xwiki-rendering-syntax-event</artifactId>
+      <version>${rendering.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.rendering</groupId>
+      <artifactId>xwiki-rendering-syntax-annotatedxhtml</artifactId>
+      <version>${rendering.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

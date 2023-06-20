@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.rendering.macro.rss;
+package org.xwiki.contrib.rssdisplay;
 
 import java.net.URL;
 import java.util.List;
@@ -27,7 +27,7 @@ import javax.inject.Singleton;
 
 import org.xwiki.component.annotation.Component;
 import org.xwiki.rendering.block.Block;
-import org.xwiki.rendering.internal.macro.rss.RssMacro;
+import org.xwiki.contrib.rssdisplay.internal.RssMacro;
 import org.xwiki.rendering.macro.MacroExecutionException;
 import org.xwiki.rendering.transformation.MacroTransformationContext;
 

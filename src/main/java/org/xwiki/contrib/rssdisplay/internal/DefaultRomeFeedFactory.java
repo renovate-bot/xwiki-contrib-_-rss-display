@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.rendering.internal.macro.rss;
+package org.xwiki.contrib.rssdisplay.internal;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.net.SocketTimeoutException;
@@ -25,7 +25,7 @@ import java.net.URLConnection;
 import java.text.MessageFormat;
 
 import org.xwiki.rendering.macro.MacroExecutionException;
-import org.xwiki.rendering.macro.rss.RssMacroParameters;
+import org.xwiki.contrib.rssdisplay.RssMacroParameters;
 import org.apache.commons.lang3.StringUtils;
 
 import com.sun.syndication.feed.synd.SyndFeed;

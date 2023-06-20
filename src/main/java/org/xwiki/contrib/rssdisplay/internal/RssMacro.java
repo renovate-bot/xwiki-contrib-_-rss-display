@@ -17,7 +17,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package org.xwiki.rendering.internal.macro.rss;
+package org.xwiki.contrib.rssdisplay.internal;
 
 import java.io.StringReader;
 import java.util.Arrays;
@@ -43,7 +43,7 @@ import org.xwiki.rendering.listener.reference.ResourceType;
 import org.xwiki.rendering.macro.MacroExecutionException;
 import org.xwiki.rendering.macro.box.AbstractBoxMacro;
 import org.xwiki.rendering.macro.descriptor.DefaultContentDescriptor;
-import org.xwiki.rendering.macro.rss.RssMacroParameters;
+import org.xwiki.contrib.rssdisplay.RssMacroParameters;
 import org.xwiki.rendering.parser.ParseException;
 import org.xwiki.rendering.parser.Parser;
 import org.xwiki.rendering.transformation.MacroTransformationContext;
@@ -238,9 +238,9 @@ public class RssMacro extends AbstractBoxMacro<RssMacroParameters>
             ImageBlock imageBlock = new ImageBlock(new ResourceReference(imagePath, ResourceType.URL), false);
 
             // Title rss icon link.
-            Block titleImageLinkBlock = new LinkBlock(Arrays.<Block> asList(imageBlock), titleResourceReference, true);
+            Block titleImageLinkBlock = new LinkBlock(Arrays.asList(imageBlock), titleResourceReference, true);
 
-            titleBlocks = Arrays.<Block> asList(titleTextLinkBlock, titleImageLinkBlock);
+            titleBlocks = Arrays.asList(titleTextLinkBlock, titleImageLinkBlock);
         }
         ParagraphBlock titleBlock = new ParagraphBlock(titleBlocks);
         titleBlock.setParameter(CLASS_ATTRIBUTE, cssClass);
@@ -257,7 +257,6 @@ public class RssMacro extends AbstractBoxMacro<RssMacroParameters>
      * @throws MacroExecutionException if the content cannot be rendered
      */
     private void generateEntries(Block parentBlock, SyndFeed feed, RssMacroParameters parameters)
-        throws MacroExecutionException
     {
         int maxElements = parameters.getCount();
         int count = 0;
