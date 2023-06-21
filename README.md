@@ -1,6 +1,6 @@
 # RSS Display
 
-Displays the contents of a RSS feed
+Displays the contents of a RSS feed.
 
 * Project Lead: [Vincent Massol](https://www.xwiki.org/xwiki/bin/view/XWiki/VincentMassol)
 * [Documentation & Download](https://extensions.xwiki.org/xwiki/bin/view/Extension/RSS%20Macro)
