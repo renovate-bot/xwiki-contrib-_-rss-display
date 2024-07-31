@@ -20,8 +20,5 @@
 
 node('docker') {
     xwikiBuild {
-        goals = 'clean deploy jacoco:report sonar:sonar'
-        profiles = 'quality,integration-tests'
-        sonar = true
     }
 }
